@@ -1,6 +1,6 @@
-# _module_.js
+# \_module\_.js
 
-_module_.js is namespace manager inspired by typescript.
+\_module\_.js is namespace manager inspired by typescript.
 
 ## FEATURES
 
