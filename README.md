@@ -2,20 +2,13 @@
 
 \_module\_.js is namespace manager inspired by typescript.
 
-## FEATURES
+## Features
 
 - auto namespace initializer
 - hack "_module_" of global
 - allow using global namespace
 
-## WHY
-
-I hate require.js.
-
-It is too ugly to use for me because of catching module by argument order.
-If we take care of namespace scope thoroughly, we can use global namespace.
-
-## HOW TO USE
+## How to use
 
 ```html
 <sciprt src="_module_.js"></sciprt>
@@ -34,3 +27,11 @@ _module_ "App.View", (App, View) ->
 # you can access object via namespace
 myview = new App.View.MyView
 ```
+
+## Why?
+
+I hate require.js.
+
+It is too ugly to use for me because of catching module by argument order.
+If we take care of namespace scope thoroughly, we can use global namespace.
+
