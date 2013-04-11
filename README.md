@@ -5,7 +5,7 @@
 ## Features
 
 - auto namespace initializer
-- hack "_module_" of global
+- hack "\_module\_" of global
 - allow using global namespace
 
 ## How to use
@@ -13,6 +13,8 @@
 ```html
 <sciprt src="_module_.js"></sciprt>
 ```
+
+### \_module\_
 
 ```coffee
 # You don't have to initialize nested namespace.
@@ -27,6 +29,19 @@ _module_ "App.View", (App, View) ->
 # you can access object via namespace
 myview = new App.View.MyView
 ```
+
+### \_include\_
+
+```
+_module_ "A.B", ->
+  @foo = -> console.log "foo"
+
+_module_ "A", ->
+  _include_ @, A.B
+
+A.foo()
+```
+
 
 ## Why?
 

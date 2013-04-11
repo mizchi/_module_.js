@@ -2,9 +2,14 @@
 void function () {
   var root;
   root = 'undefined' !== typeof window && null != window ? window : 'undefined' !== typeof global && null != global ? global : this;
-  root._module_ = function (ns, f) {
-    var context, hist, name;
-    context = root;
+  root._module_ = function (ns, f, context) {
+    var hist, name;
+    if (null == context)
+      context = root;
+    if (null != context)
+      context;
+    else
+      context = root;
     hist = [];
     for (var cache$ = ns.split('.'), i$ = 0, length$ = cache$.length; i$ < length$; ++i$) {
       name = cache$[i$];
@@ -14,5 +19,13 @@ void function () {
       hist.push(context);
     }
     return f.apply(context, hist);
+  };
+  root._include_ = function (target, ns) {
+    var key, val;
+    for (key in ns) {
+      val = ns[key];
+      target[key] = val;
+    }
+    return ns;
   };
 }.call(this);
