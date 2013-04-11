@@ -33,5 +33,5 @@ myview = new App.View.MyView
 I hate require.js.
 
 It is too ugly to use for me because of catching module by argument order.
-If we take care of namespace scope thoroughly, we can use global namespace.
+If we take care of namespace scope thoroughly, we are supporsed to use global namespace.
 
